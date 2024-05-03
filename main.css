@@ -1,0 +1,1053 @@
+/*
+  .one {
+  background-color: red;
+  color: white;
+}
+.two {
+  background-color: #EEE;
+  width: 100px;
+  height: 100px;
+}
+a {
+    color: brown;
+    text-decoration: none;
+}
+
+a:hover {                 فائدته لو حركت الموس عليه هيتغير لونه الى البنفسجى
+  color: blueviolet; 
+}
+.ch:checked + label {   هنا اقصد لو ضغط على التشيك هيتغير لونه
+    color: aqua;
+}
+
+a:visited {       هنا اقصد لو زورت اللينك هيتغير لونه الى الاخضر
+    color: green;
+}
+
+div:empty {                      هنا اقصد اى divعنصر فاضى هياخد بوردر بالحجم دا
+    border: 5px solid red;
+}
+
+.in {
+    border: 3px solid khaki;
+}
+
+.in:focus {
+    border: 3px solid rgb(103, 39, 220);
+    outline: none;
+    
+}
+.opi span {
+    display: inline-block;
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+
+}
+.jkl::first-letter{              فائدته بتحكم فى اول حرف
+    display: inline-block;
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}
+.ygf::first-line {         فائدته اقدر اتحمكم فى اول سطر
+    font-weight: bold;
+    background-color: green;
+}
+.efg::selection {         فائدته اقدر اتحكم فى فى تحديد النص 
+    background-color: aquamarine;
+    color: white;
+}
+
+*/
+
+/*
+  CSS Variables
+  - Global Variable
+  - Local Variable
+  var(Variable Name, Fall Back Value) -> فانكشن اقدر استخدمها لتعديل على كل العناصر
+  
+  Fall Back Value -> دلا القيمه البديله
+*/
+
+/*
+:root {
+    --mainColor: blue;  دى القيمه الاساسيه
+    --mainPadding: 30px;
+}
+
+  .main {
+    background-color: var(--mainColor);
+    color: white;
+    padding: calc(10px + var(--mainPadding));
+  }
+  h2 {
+    color: var(--mainColor);
+    background-color: #eee;
+    padding: var(--mainPadding);
+  }
+  p {
+    color: var(--mainColor);
+    border: 2px solid var(--mainColor);
+    padding: var(--mainPadding);
+  }
+  a:hover {
+    color: var(--mainColor);
+  }
+  .local {
+    --mainColor: black;
+    background-color: var(--mainColor);
+    color: white;
+
+
+*/
+
+
+/*
+  Flexible Box صندوق مرن
+  For Parent
+  - display: flex => To Start Flexible Box 
+  - flex-direction: row => Default Value اتجاه الصف يمين او يسار
+  - flex-wrap: nowrap => Default Value التحكم فى العنصر الزياده
+  - flex-flow: [Flex-Direction] + [Flex-Wrap]
+  ---
+  - justify-content: flex-start => Default Value وهى التحكم فى محتوى الصندوق الداخلى
+  - align-items: stretch => Default Value فائدته يستخدم لعمل تمدد للعنصر رأسى او توسيط العنصر
+   - align-content: stretch => Default Value التحكم فى المحتوى كاملا
+  For Child 
+   - flex-grow: 0 => Default Value مسئوله عن نمو العناصر داخل المحتوى
+  - flex-shrink: 1 => Default Value مسئوله عن نمو العناصر داخل المحتوى
+  - order: 0 => Default Value ترتيب العناصر 
+  - flex-basis: auto => Default Value بياخد قيمه ويظبط جميع الاتجاهات
+  - flex: [Flex Grow] [Flex Shrink] [Flex Basis] 0 1 Auto بيقبل منى ثلاث قيم
+  - align-self: auto => Default Value المقدرة على التحكم فى العنصر فى اى مكان 
+*/
+
+
+
+
+/*
+.flex {
+  background-color: #eee;
+  width: 800px;
+  height: 300px;
+  padding: 20px;
+  margin: 20px auto;
+  display: flex;
+  align-items: flex-start;
+}
+.flex div {
+  background-color: #f00;
+  color: white;
+  width: 80px;
+  text-align: center;
+  padding: 20px;
+  margin-right: 5px;
+  flex-grow: 1;
+}
+*/
+
+/*
+  Filters
+   - Grayscale => التحكم فى الصورة يعنى لو اعطيته 100%هتبقى الصورة ابيض واسود
+   - Bulr => الضباب
+   - Invert => الانعكاس
+
+   img {
+  transition: 0.4s;
+  filter: Invert(100%);
+}
+img:hover {
+  filter: Invert(0);
+} 
+*/
+
+/*
+  Gradients => درجات اللون
+  linear-gradient(Direction || Angle, Color Stop 1, Color Stop 2, ....) => بيقبل منى الاتجاه واللون
+*/
+/*
+div {
+  
+  background-color: #eee;
+  width: 400px;
+  height: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  position: relative;
+}
+div::before {
+   content: '';
+   position: absolute;
+   top: -10px;
+   width: 100%;
+   left: 0;
+   background-color: gray;
+   height: 10px;
+   background-image: linear-gradient(to right, rgb(255, 0, 149) 10%, rgb(255, 0, 149) 20% , green 20%, green 20%, rebeccapurple 30%, rebeccapurple 40%, #03a9f4 
+   40%, #03a9f4 50%, #333 50%, #333 60%, red 60%, red 70%, rgb(23, 41, 23) 70%, rgb(23, 41, 23) 80%, blue 80%, blue 90%, black 90%);
+   a:hover {
+  color: gold;
+}
+
+}
+
+*/
+
+/*
+  Grid => عباره عن نظام شبكى
+  Parent
+  - display: grid | inline-grid => العناصر على نفس السطر
+  - grid-template-columns: [Number Of Columns In] => [Px, %, Auto, Repeat, Fraction, Mix] عدد الاعمده والوحدات المستخدمه
+    - Fraction => بياخد مساحه اكبر من المحتوى الذى بداخله 
+    - Auto => بياخد مساحه على قد المحتوى الذى بداخله
+  
+  - grid-template-rows: [Number Of Rows In] => [Px, %, Auto, Fraction, Repeat, Mix] =>  بيحدد ليا ارتفاع العناصر
+  - gap: [Row Gap] [Column Gap] المسافه الى بين الصفوف والاعمده
+
+  - justify-content => التحكم فى العناصر يمين وشمال الصفحه او المنتصف
+  - align-content => التحكم فى العناصر لاعلى او لاسفل الصفحه او المنتصف
+
+  Child
+  - grid-column: [Grid-Column-Start] [Grid-Column-End] => فائدتها دمج الاعمده
+  - grid-row: [Grid-Row-Start] [Grid-Row-End] => فائدتها دمج الصفوف
+  - grid-area: [Grid-Row-Start] [Grid-Column-Start] [Grid-Row-End] [Grid-Column-End] بيقبل منى البدايه والنهايه للاعمده والصفوف
+  - minmax => تحديد القيمه الاوليه والنهائيه
+  - auto-fill => بياخد الماسحه الكامله للصفحه
+
+
+
+  .parent {
+  margin: 20px auto;
+  width: 800px;
+  height: 500px;
+  background-color: #ddd;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px 5px;
+}
+.parent div {
+  background-color: red;
+  color: white;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+     
+*/
+
+/*
+  * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+ul li {
+  display: inline-block;
+}
+.page {
+  display: grid;
+  height: 100vh;
+  background-color: #eee;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas: 
+    "logo logo nav nav nav nav nav nav"
+    "cont cont cont cont cont cont side side"
+    "footer footer footer footer footer footer footer footer";
+}
+h2 {
+  grid-area: logo;
+  background-color: blanchedalmond;
+  color: black;
+}
+nav {
+  grid-area: nav;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+
+}
+section {
+  grid-area: cont;
+  background-color: aquamarine;
+  color: grey;
+}
+aside {
+  grid-area: side;
+  background-color: aqua;
+  color: blue;
+}
+footer {
+  grid-area: footer;
+  background-color: green;
+  color: white;
+}
+
+
+*/
+
+/*
+  * {
+  box-sizing: border-box;
+  margin: 0;
+}
+.parent {
+  margin: 20px auto;
+  height: 500px;
+  background-color: #eee;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.parent div {
+  background-color: red;
+  color: white;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+*/
+
+/*
+  2D Transform => بيسمح تحول العنصر من حاله الى اخرى
+  - scale x => بيسمح ليا التمدد الافقى بيحصله استرتش
+  - scale y => يسمح ليا التمدد الرأسى بيحصله استرتش
+
+  Rotate => دوران العنصر حول نفسه
+   - deg => Degrees
+   - rad => Radians
+   - grad => Gradians
+   - turn => Turn
+
+  Translate => margin, padding فائدتها تحريك العنصر بطريقه افضل من 
+
+  2D Transform Skew -> انحراف العنصر
+   - skew x => الانحراف الافقى
+   - skew y => الانحراف الرأسى
+
+   matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
+  transform-origin => مكان المنشأ (البدايه)
+  Syntax
+  Default Values => 50% 50% 0
+  2D Transform => transform-origin(X, Y)
+  3D Transform => transform-origin(X, Y, Z)
+  X-Axis
+  - CSS Unit [px, em, rem]
+  - %
+  - Keyword
+  -- Left = 0%
+  -- Center = 50%
+  -- Right = 100%
+  Y-Axis
+  - CSS Unit [px, em, rem]
+  - %
+  - Keyword
+  -- Top = 0%
+  -- Center = 50%
+  -- Bottom = 100%
+
+-----------------------------------------------
+
+3D Transform Rotate
+ rotate 3d (x,y,z,....deg) => وهو عبارة عن الثلاث محاور وزاويه الدوران
+   
+ 3D Transform-Translate, perspective, perspective-origin
+  - Transform: Translate3d() => Z التحكم فى محور 
+  - perspective => خاصيه بعطيها للأب للتحكم فى مسافه العنصر
+  - perspective-origin => التحكم فى نقل العنصر
+
+
+  - backface-visibilty => تتحكم هل المستحدم يقدر يشوف العنصر ام لا
+  - flip =>  معناها دوران العنصر
+  - transform-style =>  بيحافظ على الثلاث محازر عند الدوران
+*/
+
+ 
+
+
+
+/*
+  .image {
+  overflow: hidden;
+  width: 800px;
+  height: 400px;
+}
+.image img {
+  transition: 0.5;
+}
+.image:hover img {
+  transform: scale(1.5) rotate(4deg);
+  opacity: 0.7;
+
+*/
+/*
+  div {
+  margin: 200px auto;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(255 0 0 / 39%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  
+}
+*/
+/*
+  .shape {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background-color: #eee;
+}
+.shape > div {
+  width: 90%;
+  height: 90%;
+  background-color: rgb( 0 0 0 / 39%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 5%;
+  transition: 0.5s;
+}
+*/
+/* 
+  * {
+  box-sizing: border-box;
+  margin: 0;
+}
+.container {
+  margin: 40px auto;
+  width: 200px;
+  perspective: 600px;
+}
+.box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform: right center;
+}
+.box:hover {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+.box .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  backface-visibility: hidden;
+}
+.box .front {
+  background-color: blue;
+}
+.box .back {
+  background-color: green;
+  transform: rotateY(180deg);
+}
+
+*/
+/*
+  Animation => تحريك العناصر ولاكن بطئ
+  - KeyFrames -> الانتقال العناصر من لون الى اخر
+  - Name -> اسم ال الانيميشن
+  - Duration -> مده الانتقال
+
+  - Iteration Count -> عدد تكرار الدوران
+  - Timing Function -> وقت الدوران
+  - Spinner Loading 
+  
+  - Direction -> اتجاه الدوران
+  - Fill-Mode -> (اخر لون)keyframes  ياخد اخر لون فى 
+  - Play State -> وضع التشغيل
+  - Delay -> مده التاخير او التقديم
+*/
+/*
+  div {
+  width: 100px;
+  height: 100px;
+  background-color: #e8e3e3;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  animation-name: coloring;
+  animation-duration: 5s;
+
+
+}
+div:hover {
+  animation-play-state: paused;
+}
+@keyframes coloring {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: black;
+  }
+}
+*/
+/*
+  * {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #333;
+}
+.load {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+
+}
+.load div {
+  width: 30px;
+  height: 30px;
+  background-color: aquamarine;
+  border-radius: 50%;
+  margin: 0 5px;
+  animation-name: Up-And-Load;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-duration: alternate;
+}
+.load .two {
+  animation-delay: 0.3s;
+}
+.load .three {
+  animation-delay: 0.6s;
+}
+@keyframes Up-And-Load {
+  to {
+    opacity: 0.2;
+    transform: translateY(-20px);
+  }
+}
+
+
+*/
+/*
+  CSS Selectors   تستخدم لتنسيق العناصر
+  - * =>
+  - Element => [p, div, h2] => تحديد عناصر مباشرا
+  - Element OtherElement => div p => اى بارجراف داخل ديف
+  - .class-name => مباشرا class تحديد ال 
+  - #id-name =>id تحديد ال 
+  - .parent .child =>  parent داخل  child اى 
+  - .class-one.class-two => للتنسيق عليهم  class تحديد اتنين 
+  - .class-name div, .class-name p => class-name داخل  p, div تحديد اى 
+  - Element.class-name => p.class-name => class-name داخل  p تحديد ال 
+  - .parent > .child => Direct Child =>  تحديد الابن مباشرا لى الاب
+  
+  ===================
+  ==== Part 2 ======= 
+  ===================   
+  
+  - Element + Other Element => [div + p]  => مباشرا هيتم تنسيقه div بعد ال  p اى 
+  - Element ~ Other Elements => [p ~ div] => ولا يشترط ان يكون بعده مباشرا هيتم تنسيقه p بعد  div اى 
+  - [Attribute] => واحد Attribute يحدد جميه العناصر الذى لها 
+  - Element[Attribute] => (اسم)Attribute يحدد عنصر معين له 
+  - [Attribute=Value] => Value له  Attribute يحدد 
+  - Element[Attribute=Value] => input[type="submit"] => Value له  Attribute يحدد عنصر له 
+  - [Attribute~=Value] => Contains A Word =>  له قيمه(كلمه) منفصله وليست متصله مع كلمه اخرى هيتم تنسيقها Attribute اى 
+  - [Attribute*=Value] => Contains A Atring => له قيمه(كلمه) منفصله او متصله مع كلمه اخرى هيتم تنسيقها Attribute اى 
+  - [Attribute^=Value] => Start With A String => بدايه متشابه هيتم تنسيقها Value له  Attribute اى 
+
+
+  ===================
+  ==== Part 3 ======= 
+  ===================  
+
+  - :first-child =>  الابن الاول الموجود فى الاب الذلى يتم عليه التنسيق
+  - :last-child =>  الابن الاخير الموجود فى الاب الذى يتم عليه التنسيق
+  - :first-of-type =>  العنصر الاول من نوعه
+  - :last-of-type =>  العنصر الاخير من نوعه
+  - :only-child =>  الابن الوحيد من نوعه
+  - :only-of-type => العنصر الوحيد من نوعه
+
+  ===================
+  ==== Part 4 ======= 
+  =================== 
+
+  - :not(Selectors) => تحديد جميع العناصر عدا العنصر الى انا اختارة
+  - :nth-child(n) => تحديد رقم الابن ولاكن من البدايه
+  - :nth-last-child(n) => تحديد رقم الابن ولاكن من النهايه
+  - :nth-of-type(n) => تحديد رقم العنصر الفريد من نوعه من البدايه
+  - :nth-last-of-type(n) => تحديد رقم العنصر الفريد من نوعه ولاكن من النهايه
+  
+
+  ===================
+  ==== Part 5 ======= 
+  =================== 
+
+
+  - :root
+  - :checked => checked ال input التنسيق على 
+  - :empty => empty ال  input التنسيق على 
+  - :disabled => // // // //
+  - :required  // //
+  - :focus // //
+  - ::selection  // // 
+  - ::placeholder // //
+
+*/ 
+
+/*
+  Media Queries => الشروط
+  Responsive Design => سرعه استجابه الموقع لشروط معينه
+  - Concept Of Width
+  - Mobile
+  - Small Screens
+  - Medium Screens
+  - Large Screens
+  - Future Updates
+*/
+
+/* 
+ * {
+  box-sizing: border-box;
+  margin: 0;
+}
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.parent div {
+  padding: 20px;
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+
+@media (min-width: 1000px)  {
+  
+}
+ Mobile 
+
+@media (max-width: 767px) {
+}
+
+ Small Screens 
+
+@media (min-width: 768px)  {
+   .parent div {
+      width: calc(50% - 10px);
+}
+
+}
+
+ Medium Screens
+
+@media (min-width: 992px) {
+  .parent div {
+    width: calc(25% - 5px);
+  }  
+}
+
+
+ Large Screens 
+
+@media (min-width: 1200px) {
+}
+
+ Custom 
+
+@media (max-width: 1199px) {
+}
+
+*/
+
+
+
+.prot {
+  background-color: #ddd;
+  width: 600px;
+  height: 830px;
+  padding: 20px;
+  margin: 20px auto;
+  position: relative;
+}
+.name {
+  min-width: 560px;
+  height: 140px;
+  background-color: white;
+  position: absolute;
+  padding: 10px;
+  margin: -.5px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(97 106 113);
+  font-size: 10px;
+  font-family: sans-serif;
+
+}
+.name .clay::before {
+  content: "";
+  width: 113px;
+  height: 11px;
+  position: absolute;
+  background-color: #f1f1f1;
+  top: 117px;
+  border-radius: 3px;
+}
+.name .clay::after {
+  content: "";
+  width: 81px;
+  height: 11px;
+  position: absolute;
+  background-color: #009688;
+  top: 117px;
+  border-radius: 3px;
+}
+.an {
+  position: absolute;
+  margin-top: 42px;
+  right: 25px;
+  line-height: 2.2;
+}
+.sec {
+  position: absolute;
+  margin: 10px auto;
+  padding: 10px;
+  display: flex;
+  left: 163px;
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: bold;
+}
+.name::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 1px;
+  background-color: rgb(97 106 113);
+  left: 133px;
+  top: 0;
+  opacity: 0.1;
+  font-weight: bold;
+}
+.name::after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: #ddd;
+  left: 26px;
+}
+img {
+  position: absolute;
+  width: 76px;
+  height: 76px;
+  border-radius: 100%;
+  z-index: 1;
+  left: 28px;
+  top: 12px;
+}
+.chil  {
+  position: absolute;
+  top: 96px;
+  left: 49px;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: cursive;
+  color: black;
+}
+.ner {
+  position: absolute;
+  padding: 10px;
+  right: 0;
+  bottom: 0;
+}
+.bty {
+  position: absolute;
+  bottom: 15px;
+  left: 35px;
+  font-size: 7px;
+}
+p {
+  position: absolute;
+  color: #009688;
+  top: -7px;
+  left: -10px;
+  font-weight: bold;
+}
+.prn {
+  position: absolute;
+  min-width: 581px;
+  height: 136px;
+  background-color: white;
+  top: 198px;
+  left: 30px;
+}
+.prn::before {
+  position: absolute;
+  content: "Posting Log";
+  padding: 10px;
+  background: #607d8b;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 53px;
+  height: 5px;
+  display: flex;
+  align-items: center;
+  font-family: cursive;
+  word-spacing: -1px;
+
+}
+.prn .li1 {
+  color: #616a71;
+  margin-bottom: 15px;
+  position: relative;
+  bottom: -42px;
+  left: 13px;
+  font-size: 12px;
+  
+}
+.vig::before {
+  position: absolute;
+  content: "";
+  height: 555px;
+  width: 1px;
+  background-color: #616a71;
+  opacity: 0.1;
+  font-weight: bold;
+  top: -10px;
+  left: 200px;
+  transform: rotatez(90deg);
+
+}
+.vig::after {
+  position: absolute;
+  content: "";
+  height: 555px;
+  width: 1px;
+  background-color: #616a71;
+  opacity: 0.1;
+  font-weight: bold;
+  top: -184px;
+  left: 291px;
+  transform: rotatez(90deg);
+
+}
+
+/* .rashid_3 {
+  color: red;
+  
+} */
+.youn {
+  position: absolute;
+  min-width: 581px;
+  height: 136px;
+  background-color: white;
+  top: 353px;
+  left: 30px;
+}
+.youn::before {
+  position: absolute;
+  content: "Trophies";
+  padding: 10px;
+  background: #607d8b;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 36px;
+  height: 5px;
+  display: flex;
+  align-items: center;
+  font-family: cursive;
+  word-spacing: -1px;
+  justify-content: end;
+}
+.youn .img1 {
+  position: absolute;
+  display: block;
+  top: 47px;
+  border-radius: 0;
+  left: 17px;
+}
+.youn .img2 {
+  position: absolute;
+  display: block;
+  top: 47px;
+  border-radius: 0;
+  left: 205px;
+}
+
+
+.youn .img3 {
+  position: absolute;
+  display: block;
+  top: 47px;
+  border-radius: 0;
+  left: 300px;
+  opacity: 0.2;
+}
+.youn .img4 {
+  position: absolute;
+  display: block;
+  top: 47px;
+  border-radius: 0;
+  left: 396px;
+}
+.youn .img5 {
+  position: absolute;
+  display: block;
+  top: 47px;
+  border-radius: 0;
+  left: 490px;
+}
+.youn .img6 {
+  position: absolute;
+  display: block;
+  top: 47px;
+  border-radius: 0;
+  left: 110px;
+  opacity: 0.2;
+}
+.def {
+  position: absolute;
+  min-width: 581px;
+  height: 72px;
+  background-color: white;
+  bottom: 290px;
+  left: 29px;
+}
+.def::before {
+  position: absolute;
+  content: "Leadder News";
+  padding: 10px;
+  background: #607d8b;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 68px;
+  height: 5px;
+  display: flex;
+  align-items: center;
+  font-family: cursive;
+  word-spacing: -1px;
+  justify-content: end;
+}
+.def .hop {
+  top: 32px;
+  left: 9px;
+  color: #616a71;
+  font-size: 12px;
+}
+.power {
+  position: absolute;
+  min-width: 581px;
+  height: 250px;
+  background-color: white;
+  bottom: 19px;
+  left: 30px;
+}
+.power::before {
+  content: "Your Power";
+  position: absolute;
+  padding: 10px;
+  background: #607d8b;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 54px;
+  height: 5px;
+  display: flex;
+  align-items: center;
+  font-family: cursive;
+  justify-content: end;
+}
+.grand .san {
+  position: relative;
+  margin-bottom: 18px;
+  bottom: -50px;
+  left: 10px;
+  color: #616a71;
+  font-size: 12px;
+}
+.foo .bn {
+  position: relative;
+  margin-bottom: 19px;
+  right: -543px;
+  bottom: 143px;
+  font-size: 12px;
+  color: #616a71;
+}
+.bn::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+}
+.foo .bn::before {
+  position: absolute;
+  content: "";
+  height: 555px;
+  width: 1px;
+  background-color: #616a71;
+  opacity: 0.1;
+  font-weight: bold;
+  top: -255px;
+  left: -258px;
+  transform: rotatez(90deg);
+
+}
+.sp,
+.ye {
+  color: #009688;
+}
+.no,
+.fr,
+.cm {
+  color: red;
+}
+.co {
+  color: blue;
+}
