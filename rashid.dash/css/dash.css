@@ -560,6 +560,7 @@ ul {
         gap: 10px;
     }
 }
+
 .settings-page .close-message {
 
    border: 1px solid #ccc;
@@ -972,7 +973,7 @@ ul {
   top: 0;
   height: 100%;
   border-radius: 6px;
-};
+}
 
 /* End Projects Page */
 /* Start Courses Page */
@@ -990,7 +991,233 @@ ul {
 .courses-page .course {
   overflow: hidden;
 }
+.courses-page .course .cover {
+  min-width: 100%;
+}
+.courses-page .course .instructor {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+  border: 2px solid white;
+}
+.courses-page .course .description {
+  line-height: 1.6;
+}
+.courses-page .course .info {
+  border-top: 1px solid #eee;
+  font-size: 14px;
+}
+.courses-page .course .info .title {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translatex(-50%);
+  font-size: 15px;
+}
 /* End Courses Page */
+/* Start Frinds Page */
+.friends-page {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+@media (max-width: 767px) {
+  .friends-page {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+.friends-page .contact {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.friends-page .contact i {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 50%;
+  color: #666;
+  font-size: 13px;
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+.friends-page .contact i:hover {
+  background-color: var(--blue-color);
+  color: white;
+}
+.friends-page .icons {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.friends-page .icons i {
+  margin-right: 5px;
+}
+.friends-page .friend .icons .vip {
+  position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translatey(-50%);
+    opacity: 0.2;
+    font-size: 40px;
+}
+/* End Frinds Page */
+/* Start Files Page */
+.files-page {
+  flex-direction: row-reverse;
+  align-items: start;
+}
+@media (max-width: 767px) {
+  .files-page {
+    flex-direction: column;
+    align-items: normal;
+  }
+}
+.files-page .files-stats {
+  min-width: 260px;
+}
+.files-page .files-stats .icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.files-page .files-stats .size {
+  margin-left: auto;
+}
+.files-page .files-stats .blue {
+   background-color: #cce3ff;
+}
+.files-page .files-stats .green {
+   background-color: #d3f3df;
+}
+.files-page .files-stats .red {
+  background-color: #fdd9d7;
+}
+.files-page .files-stats .orange {
+  background-color: #fdd9d7;
+}
+.files-page .files-stats .upload {
+  margin: 15px auto 0;
+  padding: 10px 15px;
+  transition: var(--main-transition);
+}
+.files-page .files-stats .upload:hover  {
+   background-color: var(--blue-alt-color);
+}
+.files-page .files-stats .upload:hover i {
+   animation: go-up 0.8s infinite;
+}
+.files-page .files-contant {
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.files-page .files-contant img {
+  width: 64px;
+  height: 64px;
+  transition: var(--main-transition);
+}
+.files-page .files-contant .file:hover img {
+  transform: rotate(5deg);
+}
+.files-page .files-contant .info {
+  border-top: 1px solid #eee;
+ 
+}
+/* End Files Page */
+/* Start Plans Page */
+.plans-page {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+@media (max-width: 767px) {
+  .plans-page {
+    grid-template-columns: minmax(250px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+.plans-page .plan .top {
+  border: 3px solid white;
+  outline: 3px solid transparent;
+}
+.plans-page .plan.green .top {
+  outline-color: var(--green-color);
+}
+.plans-page .plan.blue .top {
+  outline-color: var(--blue-color);
+}
+.plans-page .plan.orange .top {
+  outline-color: var(--orange-color);
+}
+.plans-page .plan .price {
+  position: relative;
+  font-size: 40px;
+  width: fit-content;
+  margin: auto;
+}
+.plans-page .plan .price span {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  font-size: 25px;
+}
+.plans-page .plan ul li {
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+}
+.plans-page .plan ul li .yes {
+  margin-right: 5px;
+  color: var(--green-color);
+}
+.plans-page .plan ul li i:not(.yes, .help) {
+  margin-right: 5px;
+  color: var(--red-color);
+}
+.plans-page .plan ul li .help {
+  color: var(--grey-color);
+  margin-left: auto;
+  cursor: pointer;
+}
+
+
+.plans-page .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.plans-page .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.plans-page .tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
+/* End Plans Page */
 @keyframes change-color {
      from {
         background-color: var(--blue-color);
@@ -999,4 +1226,12 @@ ul {
         background-color: white;
     }
 
+}
+@keyframes go-up {
+  0% {
+     transform: translateY(0);
+  }
+  50% {
+     transform: translateY(-5px);
+  }
 }

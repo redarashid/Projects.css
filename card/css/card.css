@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #313131;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.cards .red{
+   background-color: #fa3f5e;
+}
+.cards .blue{
+   background-color: #3b82f6;
+}
+.cards .green{
+   background-color: #22c55e;
+}
+.cards .card  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100px;
+    width: 250px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    transition: 400ms transform,
+                400ms box-shadow,
+                400ms background-color;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.cards .card p.tip {
+    font-size: 1em;
+    font-weight: 700;
+}
+.cards .card p.secound-text {
+    font-size: 0.7em;
+}
+.cards .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    background-color: rgb(255, 255, 255);
+    color: #333;
+}
+.cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
